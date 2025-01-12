@@ -24,18 +24,30 @@ body {
     width: 1300px;
 }
 
-/* .jumbotrom {
-    height: 100%;
-    width: 100%;
-    object-position: top center;
-} */
-
 /* GENERICS */
 header {
-    background: url('../images/header-bg.png') no-repeat -50% -50% / cover, #2D28EB;
+    background: url('../images/header-bg.png') no-repeat 0 0 / cover, #2D28EB;
     border-radius: 0 0 25px 25px;
-    min-height: 400px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
+h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+
+
+/* CALENDAR DAYS WRAPPER*/
+#calendar {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 div[data-box=calendar-day] {
@@ -60,17 +72,6 @@ div[data-day=num] {
 
 img[data-icon=icon] {
     width: 100%;
-}
-
-
-
-
-/* CALENDAR DAYS WRAPPER*/
-#calendar {
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 #calendar div[data-box=calendar-day]:last-child {
