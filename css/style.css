@@ -2,6 +2,8 @@
 body {
     background-color: var(--primary);
     color: #ffffff;
+    font-family: 'Livvic', sans-serif;
+    font-weight: 600;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -41,6 +43,7 @@ div[data-box=calendar-day] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0;
 }
 
 div[data-ico-box=box-ico] {
@@ -48,6 +51,8 @@ div[data-ico-box=box-ico] {
 }
 
 div[data-day=num] {
+    text-align: center;
+    font-size: 5rem;
     width: 70%;
 }
 
@@ -64,11 +69,10 @@ img[data-icon=icon] {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    min-height: 700px;
 }
 
 #calendar div[data-box=calendar-day]:last-child {
-    /* flex: 0 1 calc(100% / 8 - 140px / 8); */
+    flex: 0 1 calc(100% / 8 - 140px / 8);
     background-color: #2D28EB;
 }
 
