@@ -24,15 +24,17 @@ body {
     width: 1300px;
 }
 
-.jumbotrom {
-    object-position: top left;
-}
+/* .jumbotrom {
+    height: 100%;
+    width: 100%;
+    object-position: top center;
+} */
 
 /* GENERICS */
 header {
-    background: #2D28EB;
+    background: url('../images/header-bg.png') no-repeat -50% -50% / cover, #2D28EB;
     border-radius: 0 0 25px 25px;
-    height: 400px;
+    min-height: 400px;
 
 }
 
@@ -73,7 +75,8 @@ img[data-icon=icon] {
 
 #calendar div[data-box=calendar-day]:last-child {
     flex: 0 1 calc(100% / 8 - 140px / 8);
-    background-color: #2D28EB;
+    color: var(--secondary);
+    background-color: #D4D6F5;
 }
 
 div[data-box=calendar-day] img:last-child {}
