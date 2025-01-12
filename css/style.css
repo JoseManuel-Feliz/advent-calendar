@@ -35,23 +35,41 @@ header {
 }
 
 div[data-box=calendar-day] {
-    flex-basis: calc(100% / 8 - 140px / 8);
+    flex: 1 0 calc(100% / 8 - 140px / 8);
     background-color: #2E6754;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-img {
+div[data-ico-box=box-ico] {
+    width: 30%;
+}
+
+div[data-day=num] {
+    width: 70%;
+}
+
+img[data-icon=icon] {
     width: 100%;
 }
 
+
+
+
 /* CALENDAR DAYS WRAPPER*/
 #calendar {
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    min-height: 700px;
 }
 
 #calendar div[data-box=calendar-day]:last-child {
-    flex-grow: 1;
+    /* flex: 0 1 calc(100% / 8 - 140px / 8); */
     background-color: #2D28EB;
 }
+
+div[data-box=calendar-day] img:last-child {}
