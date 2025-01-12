@@ -1,3 +1,4 @@
+console.log("SOURCE SCRIPT LOADED")
 const source = [
     {
         "type": "image",
