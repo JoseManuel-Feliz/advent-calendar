@@ -3,6 +3,12 @@ console.log("JS OK");
 // | IMPORT INTERESED ELEMENTS 
 const calendar = document.getElementById("calendar");
 
+// | FUNCTIONS 
+const getIndex = (el, index) => {
+    el.addEventListener('click', () => {
+        console.log(index);
+    });
+};
 
 // | GENERATE DYNAMICALLY CALENDAR BOXES
 
@@ -30,11 +36,18 @@ for (let i = 0; i < size; i++) {
     daysBoxes.innerText = j;
     daysBoxes.dataset.day = 'num'
 
-    // | APPEND INTERESED ELEMENTS
 
+    // | OVERLAY ELEMENT
+    const onOverlay = document.createElement('div');
+
+
+
+    // | APPEND INTERESED ELEMENTS
     icoBoxes.appendChild(icons);
     boxes.append(icoBoxes, daysBoxes);
     calendar.appendChild(boxes);
 
+
+    getIndex(boxes, i)
     console.log(source[i], j);
 };
