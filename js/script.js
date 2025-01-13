@@ -10,6 +10,13 @@ const getIndex = (el, index) => {
     });
 };
 
+const onOverlay = (el, index) => {
+    el.addEventListener('click', () => {
+        console.log(index, source[index]);
+    });
+};
+
+
 // | GENERATE DYNAMICALLY CALENDAR BOXES
 
 const size = source.length
@@ -36,10 +43,18 @@ for (let i = 0; i < size; i++) {
     daysBoxes.innerText = j;
     daysBoxes.dataset.day = 'num'
 
+    /* 
+        /* LAST DAY ELEMENT 
+        if (i === (size - 1)) {
+    
+        }
+    
+     */
 
     // | OVERLAY ELEMENT
-    const onOverlay = document.createElement('div');
+    const overlayContent = document.createElement('div');
 
+    onOverlay(boxes, i)
 
 
     // | APPEND INTERESED ELEMENTS
