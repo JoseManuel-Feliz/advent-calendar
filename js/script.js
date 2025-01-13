@@ -2,6 +2,9 @@ console.log("JS OK");
 
 // | IMPORT INTERESED ELEMENTS 
 const calendar = document.getElementById("calendar");
+const overlayBg = document.getElementById('bg-overlay')
+const overlayWrapper = document.getElementById('content-wrapper')
+const btn = document.getElementById('btn')
 
 // | FUNCTIONS 
 const getIndex = (el, index) => {
@@ -52,16 +55,47 @@ for (let i = 0; i < size; i++) {
      */
 
     // | OVERLAY ELEMENT
-    const overlayContent = document.createElement('div');
+    let overlayContent;
+    if (source[i]['type'] === 'image') {
+        overlayContent = document.createElement('img');
+        overlayContent.src = source[i]['url']
+    } else {
+        overlayContent = document.createElement('div');
+        overlayContent.innerText = source[i]['text']
+    }
 
-    onOverlay(boxes, i)
+    overlayContent.classList.add('hidden')
+    // | EVENT HANDLER TO SHOW OVERLAY CONTENT
+    boxes.addEventListener('click', () => {
+        overlayContent.classList.remove('hidden')
+        overlayContent.classList.add('show')
+        overlayWrapper.classList.remove('hidden')
+        overlayWrapper.classList.add('show')
+        overlayBg.classList.remove('hidden')
+        overlayBg.classList.add('bg-overlay')
 
+
+        console.log(i, source[i]);
+    });
+
+    // | EVENT HANDLER TO HIDE OVERLAY CONTENT
+    btn.addEventListener('click', () => {
+        overlayContent.classList.add('hidden')
+        overlayContent.classList.remove('show')
+        overlayWrapper.classList.add('hidden')
+        overlayWrapper.classList.remove('show')
+        overlayBg.classList.add('hidden')
+        overlayBg.classList.remove('bg-overlay')
+
+
+        console.log(i, source[i]);
+    });
 
     // | APPEND INTERESED ELEMENTS
     icoBoxes.appendChild(icons);
     boxes.append(icoBoxes, daysBoxes);
     calendar.appendChild(boxes);
-
+    overlayWrapper.append(overlayContent)
 
     getIndex(boxes, i)
     console.log(source[i], j);
