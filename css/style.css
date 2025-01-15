@@ -28,7 +28,7 @@ body {
 header {
     background: url('../images/header-bg.png') no-repeat 0 0 / cover, #2D28EB;
     border-radius: 0 0 25px 25px;
-    min-height: 300px;
+    min-height: 240px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -74,7 +74,7 @@ img[data-icon=icon] {
 /* CALENDAR DAYS NUMBERS */
 div[data-day=num] {
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     width: 70%;
 }
 
@@ -106,13 +106,56 @@ div[data-box=calendar-day] img:last-child {}
 
 /* OVERLAY CONTENT WRAPPER */
 #content-wrapper {
-    width: 600px;
-    height: 350px;
+    max-width: 30%;
     background-color: aquamarine;
     border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 50px;
+
 }
 
 /* CLASS HIDDEN */
 .hidden {
     display: none;
+}
+
+.content {
+    font-size: 2rem;
+    text-align: justify;
+    padding: 20px 30px;
+    flex-basis: calc(90% - 10px);
+}
+
+#btn {
+    text-align: center;
+    flex-basis: calc(10% - 10px);
+    order: 1;
+    background-color: blue;
+    padding: 5px 20px;
+    margin: 0 auto;
+    font-size: 26px;
+}
+
+div[data-box=calendar-day] :hover {
+    cursor: pointer;
+}
+
+#btn :hover {
+    cursor: pointer;
+}
+
+div[data-info=clicked] {
+    background-color: #4248467D;
+}
+
+div[data-info=clicked] :hover {
+    cursor: not-allowed;
+}
+
+#calendar div[data-info=clicked]:last-child {
+    background-color: #4248467D;
 }
